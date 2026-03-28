@@ -1,0 +1,66 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <div class="page-content nepali_td">
+        <div class="row profile-body">
+            <div class="col-md-8 col-xl-8 middle-wrapper">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">करदाता भुक्तानी विवरण</h4>
+                            <form id="myForm" method="post" action="#" class="forms-sample">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><b>{% trans 'full_name' %}</b>:
+                                            <span>{{ data.full_name }}</span>
+                                        </li>
+                                        <li class="list-group-item"><b>{% trans 'tax_type' %}</b>:
+                                            <span>{{ data.tax_type }}</span>
+                                        </li>
+                                        <li class="list-group-item"><b>{% trans 'remaining_tax_amount' %}</b>:
+                                            <span>{{ data.amount }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input type="checkbox" class="form-check-input" id="agreementCheckbox">
+                                    <label class="form-check-label"
+                                           for="agreementCheckbox">{% trans 'यो सम्पत्ति कर निर्धारण मैले काठमाडौँ महानगरपालिका कार्यालयमा पेश गरेको विवरणको आधारमा भएको ब्यहोरामा म जानकार छु । पछि मेरो सम्पत्ति विवरण तथा सूचनामा संसोधन हुन गई थप कर निर्धारण हुन गएमा सो को भुक्तानीको लागि म सहमत छु ।' %}</label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    {% for code in list_active_wallets %}
+                                        <a href="{% url 'initiate_payment' %}?tax_type_id={{ tax_to_pay.tax_type_id }}&amount={{ tax_to_pay.remaining_amount }}"
+                                        >
+                                            <img src="{% static 'images/others/' %}{{ code }}.png" alt="{{ code }}"
+                                                 width="90px">
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function handlePSPButtons() {
+            let agreementCheckbox = document.getElementById('agreementCheckbox');
+            let pspButtons = document.querySelectorAll('.psp-logo-link');
+            if (agreementCheckbox.checked) {
+                pspButtons.forEach(function (button) {
+                    button.classList.remove('disabled');
+                });
+            } else {
+                pspButtons.forEach(function (button) {
+                    button.classList.add('disabled');
+                });
+            }
+        }
+
+        document.getElementById('agreementCheckbox').addEventListener('change', handlePSPButtons);
+        handlePSPButtons();
+    </script>
+{% endblock %}

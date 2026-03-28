@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content_wrapper %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <div class="page-content">
+        <nav class="page-breadcrumb">
+            <ol class="breadcrumb">
+                <a href="{% url 'create_online_payable_tax_credential' %}" class="btn btn-inverse-info">Add Online Payable
+                    Tax Credentials</a>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="dataTableExample" class="table">
+                                <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Client</th>
+                                    <th>Tax Type</th>
+                                    <th>Is Active</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for r in credentials %}
+                                    <tr>
+                                        <td>{{ r.id }}</td>
+                                        <td>{{ r.client_id }}</td>
+                                        <td>{{ r.tax_type_id }}</td>
+                                        <td>{{ r.is_active }}</td>
+                                        <td class="px-4 py-3 whitespace-no-wrap border-b border-gray-200">
+                                            <form>
+                                                {% csrf_token %}
+                                                <a href="{% url 'view_online_payable_tax_credential' r.id %}"
+                                                   id="show-user">
+                                                    <span class="m-1"><i class="fa fa-eye"
+                                                                         style="color: mediumpurple"></i></span>
+                                                </a>
+                                                <a href="{% url 'update_online_payable_tax_credential' r.id %}"
+                                                   id="edit-user" title="edit">
+                                                    <span class="m-1"><i class="fa fa-edit"></i></span>
+                                                </a>
+                                                <a href="#" type="button" title="Delete" class="delete-btn"
+                                                   data-id="{{ r.id }}">
+                                                    <i class="fa fa-trash" style="color: red"></i>
+                                                </a>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const id = this.getAttribute('data-id');
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = '{% url 'delete_online_payable_tax_credential' 0 %}'.replace('0', id);
+                        form.innerHTML = '{% csrf_token %}<input type="hidden" name="id" value="' + id + '">';
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

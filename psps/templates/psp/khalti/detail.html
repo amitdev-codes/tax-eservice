@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <div class="page-content">
+        <div class="row profile-body">
+            <div class="col-md-8 col-xl-8 middle-wrapper">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Show User</h4>
+                            <ul class="list-group">
+
+                                <li class="list-group-item">client Id:
+                                    <span>{{ credential.client_id }}</span>
+                                </li>
+
+                                <li class="list-group-item">Esewa Payment Ward:
+                                    <span>{{ credential.esewa_payment_ward }}</span>
+                                </li>
+                                <li class="list-group-item">Esewa Login Url:
+                                    <span>{{ credential.esewa_login_url }}</span>
+                                </li>
+                                <li class="list-group-item">Esewa Web Verification Url:
+                                    <span>{{ credential.esewa_web_verification_url }}</span>
+                                </li>
+                                <li class="list-group-item">Esewa Success Url:
+                                    <span>{{ credential.esewa_success_url }}</span>
+                                </li>
+                                <li class="list-group-item">Esewa Failure Url:
+                                    <span>{{ credential.esewa_failure_url }}</span>
+                                </li>
+                                <li class="list-group-item">Esewa Merchant code:
+                                    <span>{{ credential.esewa_merchant_code }}</span>
+                                </li>
+                                <li class="list-group-item">Esewa Merchant key:
+                                    <span>{{ credential.esewa_merchant_key }}</span>
+                                </li>
+                                <li class="list-group-item">Esewa Merchant Secret:
+                                    <span>{{ credential.esewa_merchant_secret }}</span>
+                                </li>
+                                <li class="list-group-item">Esewa Transaction Details Url:
+                                    <span>{{ credential.esewa_transaction_details_url }}</span>
+                                </li>
+                                <li class="list-group-item">Esewa Callback Url:
+                                    <span>{{ credential.esewa_callback_url }}</span>
+                                </li>
+                                <li class="list-group-item">Is Ebps:
+                                    <span>{{ credential.is_ebps }}</span>
+                                </li>
+                                <li class="list-group-item">Created At:
+                                    <span>{{ credential.esewa_merchant_secret }}</span>
+                                </li>
+                                <li class="list-group-item">Is Active:
+                                    <span>{{ credential.is_active }}</span>
+                                </li>
+                                <li class="list-group-item">Created At:
+                                    <span>{{ credential.created_at }}</span>
+                                </li>
+                                <li class="list-group-item">Updated At:
+                                    <span>{{ credential.updated_at }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

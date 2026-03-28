@@ -1,0 +1,58 @@
+{% extends 'guest.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content_wrapper %}
+    <div class="col-md-8 ps-md-0">
+        <div class="auth-form-wrapper px-4 py-5 nepali_td">
+            <a href="#"
+               class="noble-ui-logo logo-light d-block mb-2 nepali_td">
+                      <img src="{% static 'images/others/gov.png' %}" height="60" class=" img-logo" alt="{% static 'images/no_image.jpg' %}"/>
+
+                <span>{{ PROJECT_NAME }}</span></a>
+            <h5 class="text-muted fw-normal mb-4">{% trans 'welcome_back' %}! {% trans 'login_to_your_account' %}</h5>
+            <form class="forms-sample" method="post">
+                {% csrf_token %}
+                {% if messages %}
+                    <div class="alert alert-danger" role="alert">
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                        Important: {% endif %}
+                                    {{ message }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">{% trans 'username' %}</label>
+                    <input type="text" class="form-control" id="username" placeholder="Email"
+                           name="username">
+                </div>
+                <div class="mb-3">
+                    <label for="userPassword" class="form-label">{% trans 'password' %}</label>
+                    <input type="password" class="form-control" id="userPassword"
+                           name="password"
+                           autocomplete="current-password" placeholder="Password">
+                </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="authCheck">
+                    <label class="form-check-label" for="authCheck">
+                        {% trans 'remember' %}
+                    </label>
+                </div>
+                <div>
+                    <button type="submit"
+                            class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+                        <i class="btn-icon-prepend" data-feather="twitter"></i>
+                        {% trans 'login' %}
+                    </button>
+                </div>
+                <a href="{% url 'register' %}"
+                   class="d-block mt-3 text-muted">{% trans 'Not a user?Sign up' %}</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

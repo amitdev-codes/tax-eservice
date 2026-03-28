@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <div class="row profile-body">
+        <div class="col-md-8 col-xl-8 middle-wrapper">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add credentials</h4>
+                        <form class="forms-sample" method="POST"
+                              action="{% url 'create_mst_payment_wallets_credential' %}">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="client_id"
+                                       class="form-label nepali_td">Client ID</label>
+                                <select class="form-select select2-table" name="client_id" id="client_id">
+                                    <option selected disabled>Select Client</option>
+                                    {% for id,name_en,name_np in clients %}
+                                        <option value="{{ id }}" class="nepali_td">{{ name_en }}-{{ name_np }}</option>
+                                    {% endfor %}
+                                </select>
+
+                                <div id="username-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.client_id.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.code.id_for_label }}"
+                                       class="form-label nepali_td">Code</label>
+                                <input type="text" name="code" class="form-control form-control-xs"
+                                       id="code" aria-label="form-control-xs"
+                                />
+                                <div id="code-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.code.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.name_en.id_for_label }}"
+                                       class="form-label nepali_td">Name</label>
+                                <input type="text" name="name_en" class="form-control form-control-xs"
+                                       id="name_en" aria-label="form-control-xs"
+                                />
+                                <div id="name_en-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.name_en.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.name_np.id_for_label }}"
+                                       class="form-label nepali_td">Name In Nepali</label>
+                                <input type="text" name="name_np" class="form-control form-control-xs"
+                                       id="name_np" aria-label="form-control-xs"
+                                />
+                                <div id="name_np-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.name_np.errors }}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="{{ form.remarks.id_for_label }}"
+                                       class="form-label nepali_td">Remarks</label>
+                                <input type="text" name="remarks" class="form-control form-control-xs"
+                                       id="remarks" aria-label="form-control-xs"
+                                />
+                                <div id="remarks-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.remarks.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is Web Payment</label>
+                                <div>
+                                    <input type="radio" id="is_web_payment_true" name="is_web_payment" value="true"
+                                    >
+                                    <label for="is_web_payment_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_web_payment_false" name="is_web_payment" value="false"
+                                           checked>
+                                    <label for="is_web_payment_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_web_payment.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is Token Payment</label>
+                                <div>
+                                    <input type="radio" id="is_token_payment_true" name="is_token_payment" value="true"
+                                    >
+                                    <label for="is_token_payment_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_token_payment_false" name="is_token_payment"
+                                           value="false"
+                                           checked>
+                                    <label for="is_token_payment_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_token_payment.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is Ebps</label>
+                                <div>
+                                    <input type="radio" id="is_ebps_true" name="is_ebps" value="true"
+                                    >
+                                    <label for="is_ebps_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_ebps_false" name="is_ebps"
+                                           value="false"
+                                           checked>
+                                    <label for="is_ebps_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_ebps.errors }}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is Active</label>
+                                <div>
+                                    <input type="radio" id="is_active_true" name="is_active" value="true"
+                                    >
+                                    <label for="is_active_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_active_false" name="is_active" value="false"
+                                           checked>
+                                    <label for="is_active_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_active.errors }}</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0 text-white nepali_td">
+                                    {% trans 'save' %}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

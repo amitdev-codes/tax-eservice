@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <div class="row profile-body">
+        <div class="col-md-8 col-xl-8 middle-wrapper">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add User</h4>
+                        <form class="forms-sample" method="POST" action="{% url 'create_taxpayer' %}">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="{{ form.username.id_for_label }}"
+                                       class="form-label nepali_td">{% trans 'taxpayer_code' %}</label>
+                                <input type="text" name="username" class="form-control form-control-xs"
+                                       id="username" aria-label="form-control-xs"
+                                       placeholder="{% trans 'taxpayer_code' %}" value="{{ form.username.value }}"/>
+                                <div id="username-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.username.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.email.id_for_label }}"
+                                       class="form-label nepali_td">{% trans 'email' %}</label>
+                                <input type="email" inputmode="email" name="email"
+                                       value="{{ form.email.value }}" class="form-control form-control-xs mb-4 mb-md-0"
+                                       aria-label="form-control-xs"
+                                       id="email" data-inputmask="'alias': 'email'"/>
+                                <span class="text-danger">{{ form.email.errors }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.password1.id_for_label }}"
+                                       class="form-label nepali_td">{% trans 'password' %}</label>
+                                <div class="input-group">
+                                    <input type="password" name="password1"
+                                           value="{{ form.password1.value }}" class="form-control form-control-xs"
+                                           id="password" aria-label="form-control-xs"
+                                           autocomplete="current-password" placeholder="Password"/>
+                                    <span class="bi bi-eye-slash input-group-text input-group-addon"
+                                          id="togglePassword"><i
+                                            data-feather="eye-off"></i></span>
+                                    <span class="text-danger">{{ form.password1.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.password2.id_for_label }}" class="form-label nepali_td">
+                                    {% trans 'password_confirmation' %}</label>
+                                <div class="input-group">
+                                    <input type="password" name="password2"
+                                           value="{{ form.password2.value }}" class="form-control form-control-sm"
+                                           id="{{ form.password2.id_for_label }}" autocomplete="current-password"
+                                           placeholder="Password"/>
+
+                                </div>
+                                <span class="text-danger">{{ form.password2.errors }}</span>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0 text-white nepali_td">
+                                    {% trans 'register' %}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

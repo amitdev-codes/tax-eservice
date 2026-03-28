@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <div class="page-content">
+        <div class="row profile-body">
+            <div class="col-md-8 col-xl-8 middle-wrapper">
+                <div class="row">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h4 class="card-title">Show Client Settings Credentials</h4>
+                            <a href="{% url 'app_client_settings_credential' %}" class="btn btn-xs btn-success mb-2">
+                                {% trans "Back" %}
+                            </a>
+                            <ul class="list-group">
+                                <li class="list-group-item">client Id:
+                                    <span>{{ credential.client_id }}</span>
+                                </li>
+                                <li class="list-group-item">Client Address:
+                                    <span>{{ credential.client_address }}</span>
+                                </li>
+                                <li class="list-group-item">Client Name:
+                                    <span>{{ credential.client_name }}</span>
+                                </li>
+                                <li class="list-group-item">Muntax Url:
+                                    <span>{{ credential.muntax_url }}</span>
+                                </li>
+                                <li class="list-group-item">Munacc Url:
+                                    <span>{{ credential.munacc_url }}</span>
+                                </li>
+                                <li class="list-group-item">Current Fiscal Year Code:
+                                    <span>{{ credential.current_fiscal_year_code }}</span>
+                                </li>
+                                <li class="list-group-item">Current Fiscal Year Id:
+                                    <span>{{ credential.current_fiscal_year_id }}</span>
+                                </li>
+                                <li class="list-group-item">Receipt Type:
+                                    <span>{{ credential.receipt_type }}</span>
+                                </li>
+                                <li class="list-group-item">Receipt Value:
+                                    <span>{{ credential.receipt_value }}</span>
+                                </li>
+                                <li class="list-group-item">Current Year Rate Id:
+                                    <span>{{ credential.current_year_rate_id }}</span>
+                                </li>
+                                <li class="list-group-item">Previous Year Rate Id:
+                                    <span>{{ credential.previous_year_rate_id }}</span>
+                                </li>
+                                <li class="list-group-item">Current Year Rate value:
+                                    <span>{{ credential.current_year_rate_value }}</span>
+                                </li>
+                                <li class="list-group-item">Previous Year Rate value:
+                                    <span>{{ credential.previous_year_rate_value }}</span>
+                                </li>
+
+                                <li class="list-group-item">Land Measuring Id:
+                                    <span>{{ credential.land_measuring_id }}</span>
+                                </li>
+                                <li class="list-group-item">Land Measuring Unit:
+                                    <span>{{ credential.land_measuring_unit }}</span>
+                                </li>
+                                <li class="list-group-item">Land Measuring Unit Name:
+                                    <span>{{ credential.land_measuring_unit_name }}</span>
+                                </li>
+                                <li class="list-group-item">Length Id:
+                                    <span>{{ credential.length_id }}</span>
+                                </li>
+                                <li class="list-group-item">Length Unit:
+                                    <span>{{ credential.length_unit }}</span>
+                                </li>
+                                <li class="list-group-item">Length Unit Name:
+                                    <span>{{ credential.length_unit_name }}</span>
+                                </li>
+
+                                <li class="list-group-item">Last Fiscal Year:
+                                    <span>{{ credential.last_fiscal_year }}</span>
+                                </li>
+                                <li class="list-group-item">Client Username:
+                                    <span>{{ credential.client_username }}</span>
+                                </li>
+                                <li class="list-group-item">Tax Amount From:
+                                    <span>{{ credential.tax_amount_from }}</span>
+                                </li>
+                                <li class="list-group-item">Tax Amount To:
+                                    <span>{{ credential.tax_amount_to }}</span>
+                                </li>
+                                <li class="list-group-item">Is House Land Tax Implemented:
+                                    <span>{{ credential.is_house_land_tax_implemented }}</span>
+                                </li>
+                                <li class="list-group-item">Is Ward Wise PSP Mode:
+                                    <span>{{ credential.is_ward_wise_psp_mode }}</span>
+                                </li>
+                                <li class="list-group-item">Has Ebps:
+                                    <span>{{ credential.is_ebps }}</span>
+                                </li>
+
+                                <li class="list-group-item">Is Active:
+                                    <span>{{ credential.is_active }}</span>
+                                </li>
+                                <li class="list-group-item">Created At:
+                                    <span>{{ credential.created_at }}</span>
+                                </li>
+                                <li class="list-group-item">Updated At:
+                                    <span>{{ credential.updated_at }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

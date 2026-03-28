@@ -1,0 +1,51 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card nepali_td">
+                    <div class="card-header">
+                        <h5>कर तिर्नुपर्ने विवरण</h5>
+                    </div>
+                    <div class="card-body shadow p-3">
+                        <div class="table-responsive pt-2">
+                            <table class="table table-striped table-hover table-responsive nepali_td land-details-table">
+                                <thead>
+                                <tr>
+                                    <th>क्र.स.</th>
+                                    <th>{% trans 'invoice' %}</th>
+                                    <th>{% trans 'current_fiscal_year' %}</th>
+                                    <th>{% trans 'tax_type' %}</th>
+                                    <th>{% trans 'evaluation_date_bs' %}</th>
+                                    <th>{% trans 'tax_to_pay_amount' %}</th>
+                                    <th>{% trans 'tax_paid_amount' %}</th>
+                                    <th>{% trans 'remaining_tax_amount' %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for tax_to_pay in tax_to_pay_details %}
+                                    <tr data-land-id="{{ land.land_id }}" class="clickable-row">
+                                        <td>{{ forloop.counter }}</td>
+                                        <td><a href="#" class="view-tax"><i class="fa fa-eye text-danger"></i></a></td>
+                                        <td>{{ tax_to_pay.fiscal_year }}</td>
+                                        <td>{{ tax_to_pay.tax_type }}</td>
+                                        <td>{{ tax_to_pay.calc_date_bs }}</td>
+                                        <td>{{ tax_to_pay.tax_amount|floatformat:2 }}</td>
+                                        <td>{{ tax_to_pay.tax_paid_amount|floatformat:2 }}</td>
+                                        <td>{{ tax_to_pay.remaining_amount|floatformat:2 }}</td>
+                                        <td >
+                                            <a href="{% url 'initiate_payment' %}?tax_type_id={{ tax_to_pay.tax_type_id }}&amount={{ tax_to_pay.remaining_amount }}" type="button" class="btn btn-sm btn-success">{% trans 'pay_now' %}</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

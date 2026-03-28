@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <div class="row profile-body">
+        <div class="col-md-8 col-xl-8 middle-wrapper">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Update credentials</h4>
+                        <form class="forms-sample" method="POST"
+                              action="{% url 'update_esewa_credential' form.instance.pk %}">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="client_id" class="form-label nepali_td">Client ID</label>
+                                <select class="form-select select2-table" name="client_id" id="client_id">
+                                    <option disabled>Select Client</option>
+                                    {% for id, name_en, name_np in clients %}
+                                        {% if id == form.client_id.value %}
+                                            <option value="{{ id }}" class="nepali_td" selected>{{ name_en }}
+                                                - {{ name_np }}</option>
+                                        {% else %}
+                                            <option value="{{ id }}" class="nepali_td">{{ name_en }}
+                                                - {{ name_np }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+
+                                <div id="username-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.client_id.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="esewa_payment_ward" class="form-label nepali_td">Esewa Payment Ward</label>
+                                <select class="form-select select2-table" name="esewa_payment_ward"
+                                        id="esewa_payment_ward">
+                                    <option disabled>Select Payment Wards</option>
+                                    {% for id,payment_ward in wards %}
+                                        {% if id == form.esewa_payment_ward.value %}
+                                            <option value="{{ id }}" class="nepali_td"
+                                                    selected>{{ "भुक्तानी वार्ड " }}-{{ payment_ward }}</option>
+                                        {% else %}
+                                            <option value="{{ id }}"
+                                                    class="nepali_td">{{ "भुक्तानी वार्ड " }}-{{ payment_ward }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <div id="username-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.esewa_payment_ward.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.esewa_login_url.id_for_label }}"
+                                       class="form-label nepali_td">Esewa Login Url</label>
+                                <input type="text" name="esewa_login_url" class="form-control form-control-xs"
+                                       id="esewa_login_url" aria-label="form-control-xs"
+                                       value="{{ form.esewa_login_url.value }}"
+                                />
+                                <div id="esewa_login_url-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.esewa_login_url.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.esewa_web_verification_url.id_for_label }}"
+                                       class="form-label nepali_td">Esewa Web Verification Url</label>
+                                <input type="text" name="esewa_web_verification_url"
+                                       class="form-control form-control-xs"
+                                       value="{{ form.esewa_web_verification_url.value }}"
+                                       id="esewa_web_verification_url" aria-label="form-control-xs"/>
+                                <div id="esewa_web_verification_url-error" class="invalid-feedback"
+                                     style="display: none;">
+                                    <span class="text-danger">{{ form.esewa_web_verification_url.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.esewa_success_url.id_for_label }}"
+                                       class="form-label nepali_td">Esewa Success Url</label>
+                                <input type="text" name="esewa_success_url" class="form-control form-control-xs"
+                                       id="esewa_success_url" value="{{ form.esewa_success_url.value }}"
+                                       aria-label="form-control-xs"/>
+                                <div id="esewa_success_url-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.esewa_success_url.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.esewa_failure_url.id_for_label }}"
+                                       class="form-label nepali_td">Esewa Failure Url</label>
+                                <input type="text" name="esewa_failure_url" class="form-control form-control-xs"
+                                       id="esewa_failure_url" value="{{ form.esewa_failure_url.value }}"
+                                       aria-label="form-control-xs"/>
+                                <div id="esewa_failure_url-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.esewa_failure_url.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.esewa_merchant_code.id_for_label }}"
+                                       class="form-label nepali_td">Esewa Merchant code</label>
+                                <input type="text" inputmode="esewa_merchant_code" name="esewa_merchant_code"
+                                       class="form-control form-control-xs mb-4 mb-md-0"
+                                       aria-label="form-control-xs" value="{{ form.esewa_merchant_code.value }}"
+                                       id="esewa_merchant_code"/>
+                                <span class="text-danger">{{ form.esewa_merchant_code.errors }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.esewa_merchant_key.id_for_label }}"
+                                       class="form-label nepali_td">Esewa Merchant key</label>
+                                <div class="input-group">
+                                    <input type="text" name="esewa_merchant_key"
+                                           class="form-control form-control-xs"
+                                           value="{{ form.esewa_merchant_key.value }}"
+                                           id="esewa_merchant_key" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.esewa_merchant_key.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.esewa_merchant_secret.id_for_label }}"
+                                       class="form-label nepali_td"> Esewa Merchant Secret</label>
+
+                                <div class="input-group">
+                                    <input type="text" name="esewa_merchant_secret"
+                                           class="form-control form-control-sm"
+                                           id="esewa_merchant_secret"
+                                           value="{{ form.esewa_merchant_secret.value }}"
+                                    />
+                                </div>
+                                <span class="text-danger">{{ form.esewa_merchant_secret.errors }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.esewa_transaction_details_url.id_for_label }}"
+                                       class="form-label nepali_td">Esewa Transaction Details Url</label>
+                                <input type="text" inputmode="esewa_transaction_details_url"
+                                       name="esewa_transaction_details_url"
+                                       class="form-control form-control-xs mb-4 mb-md-0"
+                                       aria-label="form-control-xs"
+                                       value="{{ form.esewa_transaction_details_url.value }}"
+                                       id="esewa_transaction_details_url"/>
+                                <span class="text-danger">{{ form.esewa_transaction_details_url.errors }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.esewa_callback_url.id_for_label }}"
+                                       class="form-label nepali_td">Esewa Callback Url</label>
+                                <input type="text"
+                                       name="esewa_callback_url"
+                                       class="form-control form-control-xs mb-4 mb-md-0"
+                                       aria-label="form-control-xs"
+                                       value="{{ form.esewa_callback_url.value }}"
+                                       id="esewa_callback_url"/>
+                                <span class="text-danger">{{ form.esewa_callback_url.errors }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is Ebps</label>
+                                <div>
+                                    <input type="radio" id="is_ebps_true" name="is_ebps" value="true"
+                                           {% if form.is_ebps.value == True %}checked{% endif %}>
+                                    <label for="is_ebps_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_ebps_false" name="is_ebps" value="false"
+                                           {% if form.is_ebps.value == False %}checked{% endif %}>
+                                    <label for="is_ebps_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_ebps.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is Active</label>
+                                <div>
+                                    <input type="radio" id="is_active_true" name="is_active" value="true"
+                                           {% if form.is_active.value == True %}checked{% endif %}>
+                                    <label for="is_active_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_active_false" name="is_active" value="false"
+                                           {% if form.is_active.value == False %}checked{% endif %}>
+                                    <label for="is_active_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_active.errors }}</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0 text-white nepali_td">
+                                    {% trans 'Update' %}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

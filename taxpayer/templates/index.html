@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content_wrapper %}
+    <div class="page-content">
+        <nav class="page-breadcrumb">
+            <ol class="breadcrumb">
+                <a href="{% url 'create_taxpayer' %}" class="btn btn-inverse-info">Add Users</a>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="card-title">List Users</h6>
+                        <div class="table-responsive">
+                            <table id="dataTableExample" class="table">
+                                <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>User Name</th>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Is Staff</th>
+                                    <th>Is Active</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for r in users %}
+                                    <tr>
+                                        <td>{{ r.id }}</td>
+                                        <td>{{ r.username }}</td>
+                                        <td>{{ r.first_name }}-{{ r.last_name }}</td>
+                                        <td>{{ r.email }}</td>
+                                        <td>{{ r.is_staff }}</td>
+                                        <td>{{ r.is_active }}</td>
+                                        <td class="px-4 py-3 whitespace-no-wrap border-b border-gray-200">
+                                            <form action="{% url 'delete_taxpayer' r.id %}" method="POST">
+                                                <a href="#" id="show-user">
+                                                    <span class="m-1"><i class="fa fa-user"
+                                                                         style="color: mediumpurple"></i></span>
+                                                </a>
+                                                <a href="#" id="show-user">
+                                                    <span class="m-1"><i class="fa fa-eye"
+                                                                         style="color: mediumpurple"></i></span>
+                                                </a>
+                                                <a href="{% url 'update_taxpayer' r.id %}" id="edit-user" title="edit">
+                                                    <span class="m-1"><i class="fa fa-edit"></i></span>
+                                                </a>
+                                                <a href="{% url 'delete_taxpayer' r.id %}" title="Delete" type="submit"
+                                                   style="display: inline-block;"
+                                                                         >
+{#                                                   onclick="event.preventDefault(); deleteConfirmation(this);">#}
+                                                    <i class="fa fa-trash" style="color: red"></i>
+                                                </a>
+{#                                                <a href="{% url 'delete_taxpayer' r.id %}" title="Delete"#}
+{#                                                   style="display: inline-block;"#}
+{#                                                                         >#}
+{#                                                   onclick="event.preventDefault(); deleteConfirmation(this);">#}
+{#                                                    <i class="fa fa-trash" style="color: red"></i>#}
+{#                                                </a>#}
+                                            </form>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

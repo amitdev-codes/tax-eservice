@@ -1,0 +1,428 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+
+
+    <div class="page-content">
+        <div class="row">
+            <div class="col-12 col-xl-12 grid-margin stretch-card">
+                <div class="card overflow-hidden">
+                    <div class="card nepali_td">
+                        <div class="card-body shadow p-3 bg-gradient-white rounded-2">
+                            {% for record in response_data %}
+                                <h6 class="card-title">{% trans 'personal_details' %}</h6>
+                                <div class="row col-md-12">
+                                    <div class="col-sm-3">
+                                        <div class="mb-3">
+                                            <label for="full_name"
+                                                   class="form-label">{% trans 'full_name' %}</label>
+                                            <input type="text" id="full_name" class="form-control form-control-sm"
+                                                   value="{{ record.full_name }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-3">
+                                        <div class="mb-3">
+                                            <label for="dob" class="form-label">{% trans 'dob' %}</label>
+                                            <input type="text" id="dob" class="form-control form-control-sm"
+                                                   value="{{ record.dob }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-3">
+                                        <div class="mb-3">
+                                            <label for="gender"
+                                                   class="form-label">{% trans 'gender' %}</label>
+                                            <input type="text" id="gender" class="form-control form-control-sm"
+                                                   value="{{ record.gender }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-3">
+                                        <div class="mb-3">
+                                            <label for="country"
+                                                   class="form-label">{% trans 'country' %}</label>
+                                            <input type="text" id="country" class="form-control form-control-sm"
+                                                   value="{{ record.country }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div><!-- Row -->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="mb-3">
+                                            <label for="occupation"
+                                                   class="form-label">{% trans 'occupation' %}</label>
+                                            <input type="text" id="occupation" class="form-control form-control-sm"
+                                                   value="{{ record.occupation }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-3">
+                                        <div class="mb-3">
+                                            <label for="mother_tongue"
+                                                   class="form-label">{% trans 'mother_tongue' %}</label>
+                                            <input type="text" id="mother_tongue" class="form-control form-control-sm"
+                                                   value="{{ record.mother_tongue }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-3">
+                                        <div class="mb-3">
+                                            <label for="nationality"
+                                                   class="form-label">{% trans 'nationality' %}</label>
+                                            <input type="text" id="nationality" class="form-control form-control-sm"
+                                                   value="{{ record.nationality_name_np }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div><!-- Row -->
+
+                                <h6 class="card-title">{% trans 'permanent_address' %}</h6>
+                                <h8 class="card-title">{{ information.personal_info.old_address }}</h8>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="zone" class="form-label">
+                                                {% trans 'zone' %}</label>
+                                            <input id="zone" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.Zone }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="district"
+                                                   class="form-label">{% trans 'district' %}</label>
+                                            <input id="district" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.District }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="local_level"
+                                                   class="form-label">{% trans 'local_level' %}</label>
+                                            <input id="local_level" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.LocalLevel }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="ward" class="form-label">
+                                                {% trans 'ward' %}</label>
+                                            <input id="ward" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.Ward }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="street_name"
+                                                   class="form-label">{% trans 'street_name' %}</label>
+                                            <input id="street_name" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.street_name }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="house_no"
+                                                   class="form-label">{% trans 'house_no' %}</label>
+                                            <input id="house_no" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.house_no }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div><!-- Row -->
+                                <h8 class="card-title">{% trans 'new_address' %}</h8>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="province"
+                                                   class="form-label">{% trans 'province' %}</label>
+                                            <input id="province" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.Province }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="district"
+                                                   class="form-label">{% trans 'district' %}</label>
+                                            <input id="district" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.fedDistrict }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="local_level"
+                                                   class="form-label">{% trans 'local_level' %}</label>
+                                            <input id="local_level" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.fedLocalLevel }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="ward" class="form-label">
+                                                {% trans 'ward' %}</label>
+                                            <input id="ward" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_infoData.new_permanent_ward_no }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="street_name"
+                                                   class="form-label">{% trans 'street_name' %}</label>
+                                            <input id="street_name" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.street_name }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="house_no"
+                                                   class="form-label">{% trans 'house_no' %}</label>
+                                            <input id="house_no" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.house_no }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div>
+
+                                <h6 class="card-title">{{ information.personal_info.temporary_address }}</h6>
+                                <h8 class="card-title">{{ information.personal_info.old_address }}</h8>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="zone" class="form-label">
+                                                {% trans 'zone' %}</label>
+                                            <input id="zone" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.Zone }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="district"
+                                                   class="form-label">{% trans 'district' %}</label>
+                                            <input id="district" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.tempDistrict }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="local_level"
+                                                   class="form-label">{% trans 'local_level' %}</label>
+                                            <input id="local_level" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.tempLocalLevel }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="ward" class="form-label">
+                                                {% trans 'ward' %}</label>
+                                            <input id="ward" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.tempWard }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="street_name"
+                                                   class="form-label">{% trans 'street_name' %}</label>
+                                            <input id="street_name" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.tempStreetName }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="house_no"
+                                                   class="form-label">{% trans 'house_no' %}</label>
+                                            <input id="house_no" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.tempHouseNo }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div><!-- Row -->
+                                <h8 class="card-title">{% trans 'new_address' %}</h8>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="province"
+                                                   class="form-label">{% trans 'province' %}</label>
+                                            <input id="province" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.Province }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="district"
+                                                   class="form-label">{% trans 'district' %}</label>
+                                            <input id="district" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.fedDistrict }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="local_level"
+                                                   class="form-label">{% trans 'local_level' %}</label>
+                                            <input id="local_level" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.fedLocalLevel }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="ward" class="form-label">
+                                                {% trans 'ward' %}</label>
+                                            <input id="ward" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_infoData.new_permanent_ward_no }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="street_name"
+                                                   class="form-label">{% trans 'street_name' %}</label>
+                                            <input id="street_name" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.street_name }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-2">
+                                        <div class="mb-3">
+                                            <label for="house_no"
+                                                   class="form-label">{% trans 'house_no' %}</label>
+                                            <input id="house_no" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.house_no }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div>
+
+                                <h8 class="card-title">{% trans 'contact_details' %}</h8>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="zone" class="form-label">
+                                                {% trans 'mobiles' %}</label>
+                                            <input id="zone" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.mobile }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="district"
+                                                   class="form-label">{% trans 'email' %}</label>
+                                            <input id="district" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.email }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="local_level"
+                                                   class="form-label">{% trans 'address' %}</label>
+                                            <input id="local_level" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.address }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div>
+
+                                <h6 class="card-title">{% trans 'mailing_address' %}</h6>
+                                <h8 class="card-title">{% trans 'citizenship' %}</h8>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="zone" class="form-label">
+                                                {% trans 'citizenship_no' %}</label>
+                                            <input id="zone" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.citizenshipNo }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="district"
+                                                   class="form-label">{% trans 'issued_date' %}</label>
+                                            <input id="district" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.CitizenshipIssuedDate }}"
+                                                   disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="local_level"
+                                                   class="form-label">{% trans 'district' %}</label>
+                                            <input id="local_level" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.citizenshipDistrict }}"
+                                                   disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div>
+                                <h8 class="card-title">{% trans 'passport' %}</h8>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="zone" class="form-label">
+                                                {% trans 'passport_no' %}</label>
+                                            <input id="zone" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.passportNo }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="district"
+                                                   class="form-label">{% trans 'issued_date' %}</label>
+                                            <input id="district" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.passportIssuedDate }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="local_level"
+                                                   class="form-label">{% trans 'district' %}</label>
+                                            <input id="local_level" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.passportDistrict }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div>
+                                <h8 class="card-title">{% trans 'voter' %}</h8>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="zone" class="form-label">
+                                                {% trans 'voter_no' %}</label>
+                                            <input id="zone" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.voterNo }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="district"
+                                                   class="form-label">{% trans 'issued_date' %}</label>
+                                            <input id="district" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.voterIssuedDate }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="local_level"
+                                                   class="form-label">{% trans 'issued_district' %}</label>
+                                            <input id="local_level" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.voterDistrict }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div>
+                                <h8 class="card-title">{% trans 'other_details' %}</h8>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="zone" class="form-label">{% trans 'pan' %}</label>
+                                            <input id="zone" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.panNo }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="district"
+                                                   class="form-label">{% trans 'other_details' %}</label>
+                                            <input id="district" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.otherDetails }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                    <div class="col-sm-4">
+                                        <div class="mb-3">
+                                            <label for="local_level"
+                                                   class="form-label">{% trans 'remarks' %}</label>
+                                            <input id="local_level" type="text" class="form-control form-control-sm"
+                                                   value="{{ personal_info.remarks }}" disabled>
+                                        </div>
+                                    </div><!-- Col -->
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

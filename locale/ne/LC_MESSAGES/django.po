@@ -1,0 +1,1777 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-12 15:39+0545\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: authentication/templates/login.html:13
+#: authentication/templates/register.html:15
+msgid "welcome_back"
+msgstr "करदाता पोर्टलमा याहाँलाई स्वागत छ ।"
+
+#: authentication/templates/login.html:13
+msgid "login_to_your_account"
+msgstr "सेवा उपयोगका लागि प्रयोगकर्ता विवरण र पासवर्ड प्रयोग गरी लगइन गर्नुहोस् ।"
+
+#: authentication/templates/login.html:30
+msgid "username"
+msgstr "प्रयोगकर्ता"
+
+#: authentication/templates/login.html:35
+#: authentication/templates/register.html:41 taxpayer/templates/create.html:34
+#: taxpayer/templates/update.html:34
+msgid "password"
+msgstr "पास्स्वोर्ड"
+
+#: authentication/templates/login.html:43
+msgid "remember"
+msgstr "सम्झनुहोस्"
+
+#: authentication/templates/login.html:50
+msgid "login"
+msgstr "साइन इन गर्नुहोस्"
+
+#: authentication/templates/login.html:54
+msgid "Not a user?Sign up"
+msgstr "नयाँ प्रयोगकर्ता ? यहाँ दर्ता गर्नुहोस्"
+
+#: authentication/templates/register.html:16
+msgid "register_to_your_account"
+msgstr "फारम भर्नुहोस्। भर्खरका लागि दर्ता गर्नुहोस्।"
+
+#: authentication/templates/register.html:22
+#: authentication/templates/register.html:24 taxpayer/templates/create.html:15
+#: taxpayer/templates/create.html:18 taxpayer/templates/update.html:15
+#: taxpayer/templates/update.html:18
+msgid "taxpayer_code"
+msgstr "करदाता सङ्केत नं"
+
+#: authentication/templates/register.html:30 taxpayer/templates/create.html:25
+#: taxpayer/templates/information/personal.html:296
+#: taxpayer/templates/update.html:25
+msgid "email"
+msgstr "इमेल"
+
+#: authentication/templates/register.html:52 taxpayer/templates/create.html:48
+#: taxpayer/templates/update.html:48
+msgid "password_confirmation"
+msgstr "पासवर्ड पुनः लेख्नुहोस"
+
+#: authentication/templates/register.html:62 taxpayer/templates/create.html:60
+#: taxpayer/templates/update.html:60
+msgid "register"
+msgstr "दर्ता गर्नुहोस्"
+
+#: authentication/templates/register.html:65
+msgid "already_registered"
+msgstr "पहिले नै प्रयोगकर्ता ? लगइन गर्नुहोस"
+
+#: layouts/templates/user/header.html:35 taxeservice/settings.py:191
+msgid "Nepali"
+msgstr ""
+
+#: layouts/templates/user/header.html:38 taxeservice/settings.py:190
+msgid "English"
+msgstr ""
+
+# sidebar
+#: layouts/templates/user/sidebar.html:9
+msgid "dashboard"
+msgstr "ड्यास बोर्ड"
+
+#: layouts/templates/user/sidebar.html:15
+msgid "information"
+msgstr "विवरण"
+
+#: layouts/templates/user/sidebar.html:21
+#: taxpayer/templates/information/personal.html:14
+msgid "personal_details"
+msgstr "व्यक्तिगत जानकारी"
+
+#: layouts/templates/user/sidebar.html:23
+msgid "organization"
+msgstr "संघ/संस्थागत विवरण"
+
+#: layouts/templates/user/sidebar.html:26
+msgid "business"
+msgstr "व्यवसाय"
+
+#: layouts/templates/user/sidebar.html:28
+msgid "rental"
+msgstr "बहाल"
+
+#: layouts/templates/user/sidebar.html:31
+msgid "relatives"
+msgstr "नातेदारको विवरण"
+
+#: layouts/templates/user/sidebar.html:33
+msgid "files"
+msgstr "कागजात"
+
+#: layouts/templates/user/sidebar.html:34
+#: taxpayer/templates/information/personal.html:415
+msgid "remarks"
+msgstr "टिप्पणीहरु"
+
+#: layouts/templates/user/sidebar.html:41
+msgid "property"
+msgstr "सम्पत्ति"
+
+#: layouts/templates/user/sidebar.html:48
+msgid "payment"
+msgstr "भुक्तानी"
+
+#: layouts/templates/user/sidebar.html:53
+msgid "calculate_tax"
+msgstr "मूल्याङ्कन तथा कर निर्धारण"
+
+#: layouts/templates/user/sidebar.html:54
+msgid "tax_to_pay"
+msgstr "कर तिनुपर्ने विवरण"
+
+#: layouts/templates/user/sidebar.html:56
+msgid "tax_paid"
+msgstr "कर तिरेको विवरण"
+
+#: layouts/templates/user/sidebar.html:72
+msgid "faq"
+msgstr "सहायता कक्ष"
+
+#: layouts/templates/user/sidebar.html:78
+msgid "how_to"
+msgstr "बारम्बार सोधिने प्रश्न"
+
+#: layouts/templates/user/sidebar.html:84
+msgid "change_password"
+msgstr "पासवर्ड परिवर्तन गर्नुहोस्"
+
+#: master_menu/templates/acc_receipt_flag/create.html:76
+#: master_menu/templates/app_client_settings/create.html:336
+#: master_menu/templates/app_client_settings/update.html:361
+#: master_menu/templates/mst_payment_wallets/create.html:145
+#: master_menu/templates/online_payable_tax/create.html:63
+#: psps/templates/psp/esewa/create.html:164
+#: psps/templates/psp/fonepay/create.html:164
+#: psps/templates/psp/ips/create.html:188
+#: psps/templates/psp/khalti/create.html:164
+msgid "save"
+msgstr ""
+
+#: master_menu/templates/acc_receipt_flag/detail.html:14
+#: master_menu/templates/acc_receipt_flag/update.html:12
+#: master_menu/templates/app_client_settings/detail.html:14
+#: master_menu/templates/mst_payment_wallets/detail.html:14
+#: master_menu/templates/online_payable_tax/detail.html:14
+#: master_menu/templates/online_payable_tax/update.html:13
+msgid "Back"
+msgstr ""
+
+#: master_menu/templates/acc_receipt_flag/update.html:81
+#: master_menu/templates/mst_payment_wallets/update.html:152
+#: master_menu/templates/online_payable_tax/update.html:71
+#: psps/templates/psp/esewa/update.html:185
+#: psps/templates/psp/fonepay/update.html:185
+#: psps/templates/psp/ips/update.html:185
+#: psps/templates/psp/khalti/update.html:185
+msgid "Update"
+msgstr ""
+
+#: payment/templates/tax_to_pay.html:18
+msgid "invoice"
+msgstr "बिजक"
+
+#: payment/templates/tax_to_pay.html:19
+msgid "current_fiscal_year"
+msgstr "आर्थिक वर्ष"
+
+#: payment/templates/tax_to_pay.html:20
+msgid "tax_type"
+msgstr "करको किसिम"
+
+#: payment/templates/tax_to_pay.html:21
+msgid "evaluation_date_bs"
+msgstr "मुल्याङ्कन मिति(बि.स​.)"
+
+#: payment/templates/tax_to_pay.html:22
+msgid "tax_to_pay_amount"
+msgstr "तिर्नुपर्ने रकम"
+
+#: payment/templates/tax_to_pay.html:23
+msgid "tax_paid_amount"
+msgstr "कर तिरेको रकम"
+
+#: payment/templates/tax_to_pay.html:24
+msgid "remaining_tax_amount"
+msgstr "कर तिर्न बाँकी रकम"
+
+#: payment/templates/tax_to_pay.html:39
+msgid "pay_now"
+msgstr "भुक्तानी गर्नुहोस"
+
+#: taxeservice/lib/python3.10/site-packages/bootstrap5/components.py:17
+#: taxeservice/lib/python3.10/site-packages/bootstrap5/templates/bootstrap5/form_errors.html:3
+#: taxeservice/lib/python3.10/site-packages/bootstrap5/templates/bootstrap5/messages.html:4
+msgid "close"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
+msgid "Messages"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: taxeservice/lib/python3.10/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/paginator.py:50
+msgid "That page number is not an integer"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/paginator.py:52
+msgid "That page number is less than 1"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/paginator.py:54
+msgid "That page contains no results"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:104
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:752
+msgid "Enter a valid URL."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:165
+msgid "Enter a valid integer."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:176
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:259
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:267
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:279
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:287
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:316
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:296
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:317
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:308
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:315
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:351
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:357
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:392
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:401
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:410
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:420
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:438
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:461
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:347
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:386
+msgid "Enter a number."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:463
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:468
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:473
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:544
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/core/validators.py:605
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/base.py:1423
+#: taxeservice/lib/python3.10/site-packages/django/forms/models.py:893
+msgid "and"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/base.py:1425
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/constraints.py:17
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:128
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:129
+msgid "This field cannot be null."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:130
+msgid "This field cannot be blank."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:131
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:135
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:173
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1094
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1095
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1097
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1147
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1149
+msgid "String (unlimited)"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1253
+msgid "Comma-separated integers"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1354
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1358
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1493
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1362
+msgid "Date (without time)"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1489
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1497
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1502
+msgid "Date (with time)"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1626
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1628
+msgid "Decimal number"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1789
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1793
+msgid "Duration"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1845
+msgid "Email address"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1870
+msgid "File path"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1948
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1950
+msgid "Floating point number"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1990
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1992
+msgid "Integer"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2088
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2105
+msgid "Small integer"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2113
+msgid "IPv4 address"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2144
+msgid "IP address"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2237
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2238
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2240
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2291
+msgid "Positive big integer"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2306
+msgid "Positive integer"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2321
+msgid "Positive small integer"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2337
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2373
+msgid "Text"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2448
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2452
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2456
+msgid "Time"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2564
+msgid "URL"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2588
+msgid "Raw binary data"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2653
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2655
+msgid "Universally unique identifier"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/files.py:232
+msgid "File"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/files.py:393
+msgid "Image"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/json.py:26
+msgid "A JSON object"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/json.py:28
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/related.py:919
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/related.py:921
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/related.py:1212
+msgid "One-to-one relationship"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/related.py:1269
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/related.py:1271
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/db/models/fields/related.py:1319
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: taxeservice/lib/python3.10/site-packages/django/forms/boundfield.py:184
+msgid ":?.!"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:298
+msgid "Enter a whole number."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:467
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:1241
+msgid "Enter a valid date."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:490
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:1242
+msgid "Enter a valid time."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:517
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:551
+msgid "Enter a valid duration."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:552
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:621
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:622
+msgid "No file was submitted."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:623
+msgid "The submitted file is empty."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:625
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:630
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:694
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:857
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:949
+#: taxeservice/lib/python3.10/site-packages/django/forms/models.py:1566
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:951
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:1070
+#: taxeservice/lib/python3.10/site-packages/django/forms/models.py:1564
+msgid "Enter a list of values."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:1071
+msgid "Enter a complete value."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:1310
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/fields.py:1340
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: taxeservice/lib/python3.10/site-packages/django/forms/forms.py:98
+msgid ":"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/forms.py:244
+#: taxeservice/lib/python3.10/site-packages/django/forms/forms.py:328
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/formsets.py:63
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/formsets.py:67
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/formsets.py:72
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/formsets.py:484
+#: taxeservice/lib/python3.10/site-packages/django/forms/formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/models.py:886
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/models.py:891
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/models.py:898
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/models.py:907
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/models.py:1338
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/models.py:1429
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/models.py:1568
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/utils.py:226
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/widgets.py:463
+msgid "Clear"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/widgets.py:464
+msgid "Currently"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/widgets.py:465
+msgid "Change"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/widgets.py:794
+msgid "Unknown"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/widgets.py:795
+msgid "Yes"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/forms/widgets.py:796
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: taxeservice/lib/python3.10/site-packages/django/template/defaultfilters.py:861
+msgid "yes,no,maybe"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/template/defaultfilters.py:891
+#: taxeservice/lib/python3.10/site-packages/django/template/defaultfilters.py:908
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/template/defaultfilters.py:910
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/template/defaultfilters.py:912
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/template/defaultfilters.py:914
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/template/defaultfilters.py:916
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/template/defaultfilters.py:918
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dateformat.py:73
+msgid "p.m."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dateformat.py:74
+msgid "a.m."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dateformat.py:79
+msgid "PM"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dateformat.py:80
+msgid "AM"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dateformat.py:152
+msgid "midnight"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dateformat.py:154
+msgid "noon"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:33
+#, fuzzy
+#| msgid "remember"
+msgid "September"
+msgstr "सम्झनुहोस्"
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:35
+#, fuzzy
+#| msgid "remember"
+msgid "November"
+msgstr "सम्झनुहोस्"
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:36
+#, fuzzy
+#| msgid "remember"
+msgid "December"
+msgstr "सम्झनुहोस्"
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:75
+#, fuzzy
+#| msgid "remember"
+msgctxt "alt. month"
+msgid "September"
+msgstr "सम्झनुहोस्"
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:77
+#, fuzzy
+#| msgid "remember"
+msgctxt "alt. month"
+msgid "November"
+msgstr "सम्झनुहोस्"
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/dates.py:78
+#, fuzzy
+#| msgid "remember"
+msgctxt "alt. month"
+msgid "December"
+msgstr "सम्झनुहोस्"
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/text.py:84
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/text.py:269
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: taxeservice/lib/python3.10/site-packages/django/utils/text.py:288
+#: taxeservice/lib/python3.10/site-packages/django/utils/timesince.py:135
+msgid ", "
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/csrf.py:111
+msgid "Forbidden"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/csrf.py:112
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/csrf.py:116
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/csrf.py:122
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/csrf.py:127
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/csrf.py:136
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/csrf.py:142
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/csrf.py:148
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:64
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:115
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:349
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/generic/list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/static.py:38
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/static.py:40
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/static.py:79
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:7
+#: taxeservice/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:220
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:221
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:229
+msgid "Django Documentation"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:238
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Get started with Django"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:247
+msgid "Django Community"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: taxeservice/lib/python3.10/site-packages/shortuuid/django_fields.py:12
+msgid "A short UUID field."
+msgstr ""
+
+#: taxeservice/settings.py:182
+msgid "TaxEservice"
+msgstr "करदाता पोर्टल"
+
+# personal
+#: taxpayer/templates/information/personal.html:19
+msgid "full_name"
+msgstr "पुरा नाम"
+
+#: taxpayer/templates/information/personal.html:26
+msgid "dob"
+msgstr "जन्म मिति"
+
+#: taxpayer/templates/information/personal.html:34
+msgid "gender"
+msgstr "लिङ्ग"
+
+#: taxpayer/templates/information/personal.html:42
+msgid "country"
+msgstr "देश"
+
+#: taxpayer/templates/information/personal.html:52
+msgid "occupation"
+msgstr "पेशा"
+
+#: taxpayer/templates/information/personal.html:60
+msgid "mother_tongue"
+msgstr "मातृभाषा"
+
+#: taxpayer/templates/information/personal.html:68
+msgid "nationality"
+msgstr "राष्ट्रियता"
+
+#: taxpayer/templates/information/personal.html:75
+msgid "permanent_address"
+msgstr "स्थायी ठेगाना"
+
+#: taxpayer/templates/information/personal.html:81
+#: taxpayer/templates/information/personal.html:185
+msgid "zone"
+msgstr "अञ्चल"
+
+#: taxpayer/templates/information/personal.html:89
+#: taxpayer/templates/information/personal.html:140
+#: taxpayer/templates/information/personal.html:193
+#: taxpayer/templates/information/personal.html:244
+#: taxpayer/templates/information/personal.html:334
+#: taxpayer/templates/information/personal.html:362
+msgid "district"
+msgstr "जिल्ला"
+
+#: taxpayer/templates/information/personal.html:97
+#: taxpayer/templates/information/personal.html:148
+#: taxpayer/templates/information/personal.html:201
+#: taxpayer/templates/information/personal.html:252
+msgid "local_level"
+msgstr "गा.बि.स./न.पा"
+
+#: taxpayer/templates/information/personal.html:105
+#: taxpayer/templates/information/personal.html:156
+#: taxpayer/templates/information/personal.html:209
+#: taxpayer/templates/information/personal.html:260
+msgid "ward"
+msgstr "वडा न."
+
+#: taxpayer/templates/information/personal.html:113
+#: taxpayer/templates/information/personal.html:164
+#: taxpayer/templates/information/personal.html:217
+#: taxpayer/templates/information/personal.html:268
+msgid "street_name"
+msgstr "सडकको नाम"
+
+#: taxpayer/templates/information/personal.html:121
+#: taxpayer/templates/information/personal.html:172
+#: taxpayer/templates/information/personal.html:225
+#: taxpayer/templates/information/personal.html:276
+msgid "house_no"
+msgstr "घर न"
+
+#: taxpayer/templates/information/personal.html:127
+#: taxpayer/templates/information/personal.html:231
+msgid "new_address"
+msgstr "हालको"
+
+#: taxpayer/templates/information/personal.html:132
+#: taxpayer/templates/information/personal.html:236
+msgid "province"
+msgstr "प्रदेश"
+
+#: taxpayer/templates/information/personal.html:283
+#, fuzzy
+#| msgid "other_details"
+msgid "contact_details"
+msgstr "अन्य जानकारी"
+
+#: taxpayer/templates/information/personal.html:288
+msgid "mobiles"
+msgstr "मोबाइल"
+
+#: taxpayer/templates/information/personal.html:304
+msgid "address"
+msgstr "पत्रचार ठेगाना"
+
+#: taxpayer/templates/information/personal.html:311
+msgid "mailing_address"
+msgstr "परिचयपत्र विवरण"
+
+#: taxpayer/templates/information/personal.html:312
+msgid "citizenship"
+msgstr "नागरिकता"
+
+#: taxpayer/templates/information/personal.html:317
+msgid "citizenship_no"
+msgstr "नागरिकता न"
+
+#: taxpayer/templates/information/personal.html:325
+#: taxpayer/templates/information/personal.html:354
+#: taxpayer/templates/information/personal.html:381
+msgid "issued_date"
+msgstr "जारी मिति(बि.स.)"
+
+#: taxpayer/templates/information/personal.html:341
+msgid "passport"
+msgstr "राहादानी"
+
+#: taxpayer/templates/information/personal.html:346
+msgid "passport_no"
+msgstr "राहादानी नं."
+
+#: taxpayer/templates/information/personal.html:368
+msgid "voter"
+msgstr "मतदाता"
+
+#: taxpayer/templates/information/personal.html:373
+msgid "voter_no"
+msgstr "मतदाता परिचय पत्र नं."
+
+#: taxpayer/templates/information/personal.html:389
+msgid "issued_district"
+msgstr "जारी जिल्ला"
+
+#: taxpayer/templates/information/personal.html:395
+#: taxpayer/templates/information/personal.html:407
+msgid "other_details"
+msgstr "अन्य जानकारी"
+
+#: taxpayer/templates/information/personal.html:399
+msgid "pan"
+msgstr "स्थायी लेखा नं."
+
+# locale for land details
+#: taxpayer/templates/property/land_details.html:25
+msgid "current_address"
+msgstr "साविक (गा.बि.स/वडा नं.)"
+
+#: taxpayer/templates/property/land_details.html:26
+msgid "current_ward"
+msgstr "हालको वडा"
+
+#: taxpayer/templates/property/land_details.html:27
+msgid "kitta_no"
+msgstr "कित्ता नं."
+
+#: taxpayer/templates/property/land_details.html:28
+#: taxpayer/templates/property/land_details.html:70
+#: taxpayer/templates/property/land_details.html:100
+msgid "area"
+msgstr "क्षेत्रफल"
+
+#: taxpayer/templates/property/land_details.html:29
+msgid "evaluation_amount"
+msgstr "मूल्यांकनको रकम"
+
+#: taxpayer/templates/property/land_details.html:62
+#: taxpayer/templates/property/land_details.html:96
+msgid "house_code"
+msgstr "संकेत"
+
+#: taxpayer/templates/property/land_details.html:63
+msgid "house_number"
+msgstr "घर नं"
+
+#: taxpayer/templates/property/land_details.html:64
+msgid "house_type"
+msgstr "घरको किसिम"
+
+#: taxpayer/templates/property/land_details.html:65
+msgid "construction_type"
+msgstr "बनावटको किसिम"
+
+#: taxpayer/templates/property/land_details.html:66
+msgid "total_floor"
+msgstr "तल्ला संख्या"
+
+#: taxpayer/templates/property/land_details.html:67
+msgid "length"
+msgstr "लम्बाई"
+
+#: taxpayer/templates/property/land_details.html:68
+msgid "width"
+msgstr "चौडाई"
+
+#: taxpayer/templates/property/land_details.html:69
+msgid "height"
+msgstr "उचाई"
+
+#: taxpayer/templates/property/land_details.html:71
+msgid "plinth_area"
+msgstr "प्लिन्थ क्षेत्रफल"
+
+#: taxpayer/templates/property/land_details.html:72
+msgid "construction_year"
+msgstr "निर्माण आर्थिक वर्ष"
+
+#: taxpayer/templates/property/land_details.html:73
+msgid "acquisition_date"
+msgstr "प्राप्त मिती"
+
+#: taxpayer/templates/property/land_details.html:74
+msgid "is_ebps"
+msgstr "नक्सा पास"
+
+# house details
+#: taxpayer/templates/property/land_details.html:95
+msgid "code"
+msgstr "कोड"
+
+#: taxpayer/templates/property/land_details.html:97
+msgid "floor_no"
+msgstr "तल्ला नं."
+
+#: taxpayer/templates/property/land_details.html:98
+msgid "construction_date"
+msgstr "निर्माण मिती"
+
+#: taxpayer/templates/property/land_details.html:99
+#: taxpayer/templates/property/land_details.html:101
+msgid "evaluation_name"
+msgstr "मूल्यांकनको नाम"
+
+#: taxpayer/templates/property/land_details.html:102
+msgid "evaluation_rate"
+msgstr "ममूल्यांकन दर"
+
+#: taxpayer/templates/property/land_details.html:103
+msgid "depreciation_percentage"
+msgstr "हास कट्टी %"
+
+#: taxpayer/templates/property/land_details.html:104
+msgid "depreciation_amount"
+msgstr "हास कट्टी रकम"
+
+#: taxpayer/templates/property/land_details.html:105
+msgid "land_amount"
+msgstr "जग्गा रकम"
+
+#: taxpayer/templates/property/land_details.html:106
+msgid "is_rental"
+msgstr "हास कट्टी रकम"
+
+#, fuzzy
+#~| msgid "evaluation_rate"
+#~ msgid "evaluation_date"
+#~ msgstr "ममूल्यांकन दर"
+
+# personal
+#, fuzzy
+#~| msgid "full_name"
+#~ msgid "fullname"
+#~ msgstr "पुरा नाम"
+
+#~ msgid "payments"
+#~ msgstr "भुक्तानी"
+
+#~ msgid "web"
+#~ msgstr "वेव"
+
+#~ msgid "token"
+#~ msgstr "टोकन"
+
+#~ msgid "verification"
+#~ msgstr "प्रमाणीकरण"
+
+#~ msgid "master_menu"
+#~ msgstr "मास्टर मेनु"
+
+#~ msgid "settings"
+#~ msgstr "सेटिङहरू"
+
+#~ msgid "client_settings"
+#~ msgstr "पालिका सेटिङहरू"
+
+#~ msgid "sms"
+#~ msgstr "SMS"
+
+#~ msgid "logs"
+#~ msgstr "लग"
+
+#~ msgid "privileges"
+#~ msgstr "विशेषाधिकार"
+
+#~ msgid "roles"
+#~ msgstr "भूमिकाहरू"
+
+#~ msgid "permissions"
+#~ msgstr "अनुमतिहरू"
+
+#~ msgid "role_has_permission"
+#~ msgstr "भूमिकाको अनुमति छ"
+
+#~ msgid "old_address"
+#~ msgstr "साबिक"
+
+#~ msgid "temporary_address"
+#~ msgstr "अस्थायी ठेगाना"
+
+#~ msgid "tole_name"
+#~ msgstr "टोलको नाम"
+
+#~ msgid "personal"
+#~ msgstr "व्यक्तिगत विवरण"
+
+#~ msgid "resend_verification_mail"
+#~ msgstr "प्रमाणीकरण मेल पुन: पठाउनुहोस्"

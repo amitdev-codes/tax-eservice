@@ -1,0 +1,387 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <div class="row profile-body">
+        <div class="col-md-8 col-xl-8 middle-wrapper">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add credentials</h4>
+                        <form class="forms-sample" method="POST"
+                              action="{% url 'create_app_client_settings_credential' %}">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="client_id"
+                                       class="form-label nepali_td">Client ID</label>
+                                <select class="form-select select2-table" name="client_id" id="client_id">
+                                    <option selected disabled>Select Client</option>
+                                    {% for id,name_en,name_np in clients %}
+                                        <option value="{{ id }}" class="nepali_td">{{ name_en }}-{{ name_np }}</option>
+                                    {% endfor %}
+                                </select>
+
+                                <div id="username-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.client_id.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.client_address.id_for_label }}"
+                                       class="form-label nepali_td">Client Address</label>
+                                <input type="text" name="client_address" class="form-control form-control-xs"
+                                       id="client_address" aria-label="form-control-xs"
+                                />
+                                <div id="client_address-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.client_address.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.client_name.id_for_label }}"
+                                       class="form-label nepali_td">Client Name</label>
+                                <input type="text" name="client_name" class="form-control form-control-xs"
+                                       id="client_name" aria-label="form-control-xs"
+                                />
+                                <div id="client_name-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.client_name.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.muntax_url.id_for_label }}"
+                                       class="form-label nepali_td">Muntax url</label>
+                                <input type="text" name="muntax_url" class="form-control form-control-xs"
+                                       id="muntax_url" aria-label="form-control-xs"
+                                />
+                                <div id="muntax_url-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.muntax_url.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.munacc_url.id_for_label }}"
+                                       class="form-label nepali_td">MunAcc url</label>
+                                <input type="text" name="munacc_url" class="form-control form-control-xs"
+                                       id="munacc_url" aria-label="form-control-xs"
+                                />
+                                <div id="munacc_url-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.munacc_url.errors }}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="{{ form.current_fiscal_year_code.id_for_label }}"
+                                       class="form-label nepali_td">Current Fiscal Year code</label>
+                                <input type="text" name="current_fiscal_year_code"
+                                       class="form-control form-control-xs"
+                                       id="current_fiscal_year_code" aria-label="form-control-xs"/>
+                                <div id="current_fiscal_year_code-error" class="invalid-feedback"
+                                     style="display: none;">
+                                    <span class="text-danger">{{ form.current_fiscal_year_code.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.current_fiscal_year_id.id_for_label }}"
+                                       class="form-label nepali_td">Current Fiscal Year id</label>
+                                <input type="text" name="current_fiscal_year_id" class="form-control form-control-xs"
+                                       id="current_fiscal_year_id" aria-label="form-control-xs"/>
+                                <div id="current_fiscal_year_id-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.current_fiscal_year_id.errors }}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="{{ form.receipt_type.id_for_label }}"
+                                       class="form-label nepali_td">Receipt Type</label>
+                                <input type="text" name="receipt_type" class="form-control form-control-xs"
+                                       id="receipt_type" aria-label="form-control-xs"/>
+                                <div id="receipt_type-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.receipt_type.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.receipt_value.id_for_label }}"
+                                       class="form-label nepali_td">Receipt value</label>
+                                <input type="text" inputmode="receipt_value" name="receipt_value"
+                                       class="form-control form-control-xs mb-4 mb-md-0"
+                                       aria-label="form-control-xs"
+                                       id="receipt_value"/>
+                                <span class="text-danger">{{ form.receipt_value.errors }}</span>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="{{ form.current_year_rate_id.id_for_label }}"
+                                       class="form-label nepali_td">Current Year Rate Id</label>
+                                <div class="input-group">
+                                    <input type="text" name="current_year_rate_id"
+                                           class="form-control form-control-xs"
+                                           id="current_year_rate_id" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.current_year_rate_id.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.previous_year_rate_id.id_for_label }}"
+                                       class="form-label nepali_td">Previous Year Rate Id</label>
+                                <div class="input-group">
+                                    <input type="text" name="previous_year_rate_id"
+                                           class="form-control form-control-xs"
+                                           id="previous_year_rate_id" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.previous_year_rate_id.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.current_year_rate_value.id_for_label }}"
+                                       class="form-label nepali_td">Current Year Rate Value</label>
+                                <div class="input-group">
+                                    <input type="text" name="current_year_rate_value"
+                                           class="form-control form-control-xs"
+                                           id="current_year_rate_value" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.current_year_rate_value.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.previous_year_rate_value.id_for_label }}"
+                                       class="form-label nepali_td">Previous Year Rate Value</label>
+                                <div class="input-group">
+                                    <input type="text" name="previous_year_rate_value"
+                                           class="form-control form-control-xs"
+                                           id="previous_year_rate_value" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.previous_year_rate_value.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.land_measuring_id.id_for_label }}"
+                                       class="form-label nepali_td">Land Measuring Id</label>
+                                <div class="input-group">
+                                    <input type="text" name="land_measuring_id"
+                                           class="form-control form-control-xs"
+                                           id="land_measuring_id" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.land_measuring_id.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.land_measuring_unit.id_for_label }}"
+                                       class="form-label nepali_td">Land Measuring Unit</label>
+                                <div class="input-group">
+                                    <input type="text" name="land_measuring_unit"
+                                           class="form-control form-control-xs"
+                                           id="land_measuring_unit" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.land_measuring_unit.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.land_measuring_unit_name.id_for_label }}"
+                                       class="form-label nepali_td">Land Measuring Unit Name</label>
+                                <div class="input-group">
+                                    <input type="text" name="land_measuring_unit_name"
+                                           class="form-control form-control-xs"
+                                           id="land_measuring_unit_name" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.land_measuring_unit_name.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.length_id.id_for_label }}"
+                                       class="form-label nepali_td">Length Id</label>
+                                <div class="input-group">
+                                    <input type="text" name="length_id"
+                                           class="form-control form-control-xs"
+                                           id="length_id" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.length_id.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.length_unit.id_for_label }}"
+                                       class="form-label nepali_td">Length Unit</label>
+                                <div class="input-group">
+                                    <input type="text" name="length_unit"
+                                           class="form-control form-control-xs"
+                                           id="length_unit" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.length_unit.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.length_unit_name.id_for_label }}"
+                                       class="form-label nepali_td">Length Unit Name</label>
+                                <div class="input-group">
+                                    <input type="text" name="length_unit_name"
+                                           class="form-control form-control-xs"
+                                           id="length_unit_name" aria-label="form-control-xs"/>
+                                    <span class="text-danger">{{ form.length_unit_name.errors }}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="{{ form.last_fiscal_year.id_for_label }}" class="form-label nepali_td">
+                                    Last fiscal Year</label>
+                                <div class="input-group">
+                                    <input type="text" name="last_fiscal_year"
+                                           class="form-control form-control-sm"
+                                           id="last_fiscal_year"
+                                    />
+                                </div>
+                                <span class="text-danger">{{ form.last_fiscal_year.errors }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.client_username.id_for_label }}"
+                                       class="form-label nepali_td">Client username</label>
+                                <input type="text"
+                                       name="client_username"
+                                       class="form-control form-control-xs mb-4 mb-md-0"
+                                       aria-label="form-control-xs"
+                                       id="client_username"/>
+                                <span class="text-danger">{{ form.client_username.errors }}</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.tax_amount_from.id_for_label }}"
+                                       class="form-label nepali_td">Tax Amount From</label>
+                                <input type="text"
+                                       name="tax_amount_from"
+                                       class="form-control form-control-xs mb-4 mb-md-0"
+                                       aria-label="form-control-xs"
+                                       id="tax_amount_from"/>
+                                <span class="text-danger">{{ form.tax_amount_from.errors }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{ form.tax_amount_to.id_for_label }}"
+                                       class="form-label nepali_td">Tax Amount To</label>
+                                <input type="text"
+                                       name="tax_amount_to"
+                                       class="form-control form-control-xs mb-4 mb-md-0"
+                                       aria-label="form-control-xs"
+                                       id="tax_amount_to"/>
+                                <span class="text-danger">{{ form.tax_amount_to.errors }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is House Land Tax Implemented</label>
+                                <div>
+                                    <input type="radio" id="is_house_land_tax_implemented_true"
+                                           name="is_house_land_tax_implemented" value="true"
+                                           {% if form.is_house_land_tax_implemented.value == 1 %}checked{% endif %}>
+                                    <label for="is_house_land_tax_implemented_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_house_land_tax_implemented_false"
+                                           name="is_house_land_tax_implemented" value="false"
+                                           {% if form.is_house_land_tax_implemented.value == 0 %}checked{% endif %}>
+                                    <label for="is_house_land_tax_implemented_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_house_land_tax_implemented.errors }}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is WardWise PSP Mode</label>
+                                <div>
+                                    <input type="radio" id="is_ward_wise_psp_mode_true" name="is_ward_wise_psp_mode"
+                                           value="true"
+                                           {% if form.is_ward_wise_psp_mode.value == 1 %}checked{% endif %}>
+                                    <label for="is_ward_wise_psp_mode_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_ward_wise_psp_mode_false" name="is_ward_wise_psp_mode"
+                                           value="false"
+                                           {% if form.is_ward_wise_psp_mode.value == 0 %}checked{% endif %}>
+                                    <label for="is_ward_wise_psp_mode_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_ward_wise_psp_mode.errors }}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is Ebps</label>
+                                <div>
+                                    <input type="radio" id="is_ebps_true" name="is_ebps" value="true"
+                                   >
+                                    <label for="is_ebps_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_ebps_false" name="is_ebps" value="false"
+                                           checked>
+                                    <label for="is_ebps_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_ebps.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is Active</label>
+                                <div>
+                                    <input type="radio" id="is_active_true" name="is_active" value="true"
+                                          >
+                                    <label for="is_active_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_active_false" name="is_active" value="false"
+                                           checked>
+                                    <label for="is_active_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_active.errors }}</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0 text-white nepali_td">
+                                    {% trans 'save' %}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#client_id').change(function () {
+                const clientId = $(this).val();
+                $.ajax({
+                    url: "{% url 'fetch_app_client_settings_credential' %}",
+                    type: 'GET',
+                    data: {
+                        'client_id': clientId
+                    },
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data)
+                        $('#client_address').val(data['client_address']);
+                        $('#client_name').val(data['client_name']);
+                        $('#current_fiscal_year_code').val(data['current_fiscal_year_code']);
+                        $('#current_fiscal_year_id').val(data['current_fiscal_year_id']);
+                        $('#receipt_type').val(data['receipt_type']);
+                        $('#receipt_value').val(data['receipt_value']);
+                        $('#current_year_rate_id').val(data['current_year_rate_id']);
+                        $('#previous_year_rate_id').val(data['previous_year_rate_id']);
+                        $('#current_year_rate_value').val(data['current_year_rate_value']);
+                        $('#previous_year_rate_value').val(data['previous_year_rate_value']);
+                        $('#land_measuring_id').val(data['land_measuring_id']);
+                        $('#land_measuring_unit').val(data['land_measuring_unit']);
+                        $('#land_measuring_unit_name').val(data['land_measuring_unit_name']);
+                        $('#length_id').val(data['length_id']);
+                        $('#length_unit').val(data['length_unit']);
+                        $('#length_unit_name').val(data['length_unit_name']);
+                        $('#last_fiscal_year').val(data['last_fiscal_year']);
+                        $('#client_username').val(data['client_username']);
+                        $('#tax_amount_from').val(data['tax_amount_from']);
+                        $('#tax_amount_to').val(data['tax_amount_to']);
+                        $('input:radio[name=is_house_land_tax_implemented]').prop('checked', data['house_land_type']);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

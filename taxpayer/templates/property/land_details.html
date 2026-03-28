@@ -1,0 +1,191 @@
+{% extends 'user/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <style>
+        .table tbody tr:hover {
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card nepali_td">
+                    <div class="card-header">
+                        <h5>जग्गाको विवरण</h5>
+                    </div>
+                    <div class="card-body shadow p-3">
+                        <div class="table-responsive pt-2">
+                            <table class="table table-striped table-hover table-responsive nepali_td land-details-table">
+                                <thead>
+                                <tr>
+                                    <th>क्र.स.</th>
+                                    <th>#</th>
+                                    <th>{% trans 'current_address' %}</th>
+                                    <th>{% trans 'current_ward' %}</th>
+                                    <th>{% trans 'kitta_no' %}</th>
+                                    <th>{% trans 'area' %}</th>
+                                    <th>{% trans 'evaluation_amount' %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for land in land_details %}
+                                    <tr data-land-id="{{ land.land_id }}" class="clickable-row">
+                                        <td>{{ forloop.counter }}</td>
+                                        <td><a href="#" class="view-land"><i class="fa fa-eye text-danger"></i></a></td>
+                                        <td>{{ land.land_address }}</td>
+                                        <td>{{ land.ward_no }}</td>
+                                        <td>{{ land.kitta_number }}</td>
+                                        <td>{{ land.area_sqft }}</td>
+                                        <td>{{ land.evaluation_amount }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 grid-margin stretch-card house-details-table" style="display:none;">
+                <div class="card nepali_td">
+                    <div class="card-header">
+                        <h5>घरको विवरण</h5>
+                    </div>
+                    <div class="card-body shadow p-3">
+                        <div class="table-responsive pt-2">
+                            <table class="table table-striped table-hover table-responsive nepali_td house-details-table">
+                                <thead>
+                                <tr>
+                                    <th>क्र.स.</th>
+                                    <th>#</th>
+                                    <th>{% trans 'house_code' %}</th>
+                                    <th>{% trans 'house_number' %}</th>
+                                    <th>{% trans 'house_type' %}</th>
+                                    <th>{% trans 'construction_type' %}</th>
+                                    <th>{% trans 'total_floor' %}</th>
+                                    <th>{% trans 'length' %}</th>
+                                    <th>{% trans 'width' %}</th>
+                                    <th>{% trans 'height' %}</th>
+                                    <th>{% trans 'area' %}</th>
+                                    <th>{% trans 'plinth_area' %}</th>
+                                    <th>{% trans 'construction_year' %}</th>
+                                    <th>{% trans 'acquisition_date' %}</th>
+                                    <th>{% trans 'is_ebps' %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 grid-margin stretch-card house-floor-details-table" style="display:none;">
+                <div class="card nepali_td">
+                    <div class="card-header">
+                        <h5>घरको तल्लाको विवरण</h5>
+                    </div>
+                    <div class="card-body shadow p-3">
+                        <div class="table-responsive pt-2">
+                            <table class="table table-striped table-hover table-responsive nepali_td house-floor-details-table">
+                                <thead>
+                                <tr>
+                                    <th>क्र.स.</th>
+                                    <th>{% trans 'code' %}</th>
+                                    <th>{% trans 'house_code' %}</th>
+                                    <th>{% trans 'floor_no' %}</th>
+                                    <th>{% trans 'construction_date' %}</th>
+                                    <th>{% trans 'evaluation_name' %}</th>
+                                    <th>{% trans 'area' %}</th>
+                                    <th>{% trans 'evaluation_name' %}</th>
+                                    <th>{% trans 'evaluation_rate' %}</th>
+                                    <th>{% trans 'depreciation_percentage' %}</th>
+                                    <th>{% trans 'depreciation_amount' %}</th>
+                                    <th>{% trans 'land_amount' %}</th>
+                                    <th>{% trans 'is_rental' %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('table.land-details-table tbody').on('click', 'tr', function () {
+                let landId = $(this).data('land-id');
+                $('table.land-details-table tbody tr').removeClass('active');
+                $(this).addClass('active');
+                $('.house-details-table').show();
+                $('.house-floor-details-table').hide();
+                // AJAX request to fetch house details
+                $.ajax({
+                    url: '{% url "house_details" %}',
+                    type: 'GET',
+                    data: {land_id: landId},
+                    success: function (response) {
+                        let houseDetailsHtml = '';
+                        response.house_details.forEach(function (house, index) {
+                            houseDetailsHtml += '<tr data-house-id="' + house.id + '" data-kitta-number="' + house.kitta_number + '">';
+                            houseDetailsHtml += '<td>' + (index + 1) + '</td>';
+                            houseDetailsHtml += '<td><a href="#" class="view-house"><i class="fa fa-eye text-danger"></i></a></td>';
+                            houseDetailsHtml += '<td>' + house.code + '</td>';
+                            houseDetailsHtml += '<td>' + house.house_no + '</td>';
+                            houseDetailsHtml += '<td>' + house.house_type + '</td>';
+                            houseDetailsHtml += '<td>' + house.construction_name_np + '</td>';
+                            houseDetailsHtml += '<td>' + house.floor_no + '</td>';
+                            houseDetailsHtml += '<td>' + house.length_in_feet + '</td>';
+                            houseDetailsHtml += '<td>' + house.width_in_feet + '</td>';
+                            houseDetailsHtml += '<td>' + house.height_in_feet + '</td>';
+                            houseDetailsHtml += '<td>' + house.area_in_sqft + '</td>';
+                            houseDetailsHtml += '<td>' + house.plinth_area_sqft + '</td>';
+                            houseDetailsHtml += '<td>' + house.construction_fiscal_year + '</td>';
+                            houseDetailsHtml += '<td>' + house.acquisition_date_bs + '</td>';
+                            houseDetailsHtml += '<td>' + house.has_construction_complete_certificate + '</td>';
+                            houseDetailsHtml += '</tr>';
+                        });
+                        $('table.house-details-table tbody').html(houseDetailsHtml);
+                    }
+                });
+            });
+            $('table.house-details-table tbody').on('click', 'tr', function () {
+                let houseId = $(this).data('house-id');
+                let kittaNumber = $(this).data('kitta-number');
+                let landId = $('table.land-details-table tbody tr.active').data('land-id');
+                $('.house-floor-details-table').show();
+                $.ajax({
+                    url: '{% url "house_floor_details" %}',
+                    type: 'GET',
+                    data: {house_id: houseId, land_id: landId, kitta_number: kittaNumber},
+                    success: function (response) {
+                        let houseFloorDetailsHtml = '';
+                        console.log(response.house_floor_details)
+                        $.each(response.house_floor_details, function (index, houseFloor) {
+                            houseFloorDetailsHtml += '<tr>';
+                            houseFloorDetailsHtml += '<td>' + (index + 1) + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.code + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.house_no + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.floor_no + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.construction_date_bs + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.name_np + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.area_in_sqft + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.rate_per_unit + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.calculated_value + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.depreciation_rate + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.depreciation_amount + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.net_eval_value + '</td>';
+                            houseFloorDetailsHtml += '<td>' + houseFloor.is_rented + '</td>';
+                            houseFloorDetailsHtml += '</tr>';
+                        });
+                        $('table.house-floor-details-table tbody').html(houseFloorDetailsHtml);
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

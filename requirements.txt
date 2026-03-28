@@ -1,0 +1,12 @@
+python-dotenv
+psycopg2
+
+#ui
+django-bootstrap5
+django-bootstrap-icons
+django-bootstrap5-admin
+django-crispy-forms
+
+#deployment
+whitenoise
+django-unicorn

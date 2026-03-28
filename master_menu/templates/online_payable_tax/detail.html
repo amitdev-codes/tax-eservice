@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <div class="page-content">
+        <div class="row profile-body">
+            <div class="col-md-8 col-xl-8 middle-wrapper">
+                <div class="row">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h4 class="card-title">Show Online Payable Tax Credentials</h4>
+                            <a href="{% url 'online_payable_tax_credential' %}" class="btn btn-xs btn-success mb-2">
+                                {% trans "Back" %}
+                            </a>
+                            <ul class="list-group">
+                                <li class="list-group-item">client Id:
+                                    <span>{{ credential.client_id }}</span>
+                                </li>
+                                <li class="list-group-item">Tax Type:
+                                    <span>{{ credential.tax_type_id }}</span>
+                                </li>
+
+                                <li class="list-group-item">Is Active:
+                                    <span>{{ credential.is_active }}</span>
+                                </li>
+                                <li class="list-group-item">Created At:
+                                    <span>{{ credential.created_at }}</span>
+                                </li>
+                                <li class="list-group-item">Updated At:
+                                    <span>{{ credential.updated_at }}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

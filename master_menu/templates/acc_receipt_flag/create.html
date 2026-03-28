@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block content_wrapper %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <div class="row profile-body">
+        <div class="col-md-8 col-xl-8 middle-wrapper">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Add credentials</h4>
+                        <form class="forms-sample" method="POST"
+                              action="{% url 'create_acc_receipt_flag_credential' %}">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="client_id"
+                                       class="form-label nepali_td">Client ID</label>
+                                <select class="form-select select2-table" name="client_id" id="client_id">
+                                    <option selected disabled>Select Client</option>
+                                    {% for id,name_en,name_np in clients %}
+                                        <option value="{{ id }}" class="nepali_td">{{ name_en }}-{{ name_np }}</option>
+                                    {% endfor %}
+                                </select>
+
+                                <div id="username-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.client_id.errors }}</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tax_type_id"
+                                       class="form-label nepali_td">Tax Type ID</label>
+                                <select class="form-select select2-table" name="tax_type_id" id="tax_type_id">
+                                    <option selected disabled>Select Client</option>
+                                    {% for id,name_en,name_np in tax_types %}
+                                        <option value="{{ id }}" class="nepali_td">{{ name_en }}-{{ name_np }}</option>
+                                    {% endfor %}
+                                </select>
+
+                                <div id="username-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.tax_type_id.errors }}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="{{ form.receipt_flag.id_for_label }}"
+                                       class="form-label nepali_td">Receipt Flag</label>
+                                <input type="text" name="receipt_flag" class="form-control form-control-xs"
+                                       id="receipt_flag" aria-label="form-control-xs"
+                                />
+                                <div id="receipt_flag-error" class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.receipt_flag.errors }}</span>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label class="form-label nepali_td">Is Active</label>
+                                <div>
+                                    <input type="radio" id="is_active_true" name="is_active" value="true"
+                                    >
+                                    <label for="is_active_true" class="nepali_td">True</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="is_active_false" name="is_active" value="false"
+                                           checked>
+                                    <label for="is_active_false" class="nepali_td">False</label>
+                                </div>
+                                <div class="invalid-feedback" style="display: none;">
+                                    <span class="text-danger">{{ form.is_active.errors }}</span>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary me-2 mb-2 mb-md-0 text-white nepali_td">
+                                    {% trans 'save' %}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
